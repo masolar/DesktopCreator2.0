@@ -12,20 +12,20 @@ import helpers.Helper._
 
 trait ZeroArgFunction extends ArgFunctionBase
 
-case class XFunction(alpha: Float) extends ZeroArgFunction {
-  override def getPixel(x: Float, y: Float) = {
+case class XFunction() extends ZeroArgFunction {
+  override def getPixel(x: Float, y: Float, alpha: Float) = {
     Seq[Float](x, x, x, alpha) map {clampInclusive(_, 0.0f, 1.0f)}
   }
 }
 
-case class YFunction(alpha: Float) extends ZeroArgFunction {
-  override def getPixel(x: Float, y: Float) = {
+case class YFunction() extends ZeroArgFunction {
+  override def getPixel(x: Float, y: Float, alpha: Float) = {
     Seq[Float](y, y, y, alpha) map {clampInclusive(_, 0.0f, 1.0f)}
   }
 }
 
-case class ConstantFunction(value: Float, alpha: Float) extends ZeroArgFunction {
-  override def getPixel(x: Float, y: Float) = {
+case class ConstantFunction(value: Float) extends ZeroArgFunction {
+  override def getPixel(x: Float, y: Float, alpha: Float) = {
     Seq[Float](value, value, value, alpha) map {clampInclusive(_, 0.0f, 1.0f)}
   }
 }
