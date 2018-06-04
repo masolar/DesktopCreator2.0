@@ -6,7 +6,6 @@ scalaVersion := "2.12.6"
 
 libraryDependencies ++= Seq(
   "com.typesafe.akka" %% "akka-actor" % "2.5.12",
-  "com.typesafe.akka" %% "akka-testkit" % "2.5.12" % Test
+  "com.typesafe.akka" %% "akka-testkit" % "2.5.12" % Test,
+  "io.argonaut" %% "argonaut" % "6.2"
 )
-
-val lift_json = "net.liftweb" %% "lift-json" % "XXX"
